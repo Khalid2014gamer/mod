@@ -14,7 +14,6 @@ elements.sulfuric_acid = {
 
     reactions: {
         // Burns organic materials
-        "cotton": { elem1: null, elem2: "sugar", chance: 0.5 },
         "sugar": { elem1: null, elem2: "carbon", chance: 0.3 },
 
         // Reacts with metals
