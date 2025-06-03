@@ -1,7 +1,5 @@
-// Sulfuric Acid Element Mod for Sandboxels
-
 elements.sulfuric_acid = {
-    color: "#b0e0e6", // pale blue liquid
+    color: "#b0e0e6",
     behavior: behaviors.LIQUID,
     category: "liquids",
     state: "liquid",
@@ -11,15 +9,10 @@ elements.sulfuric_acid = {
     tempLow: -10,
     hidden: false,
     desc: "A strong corrosive acid that reacts violently with water and metals.",
-
     reactions: {
-        // Burns organic materials
+        "plant": { elem1: null, elem2: "sugar", chance: 0.5 },
         "sugar": { elem1: null, elem2: "carbon", chance: 0.3 },
-
-        // Reacts with metals
         "metal": { elem1: "salt", elem2: "hydrogen", chance: 0.7 },
-
-        // Violent reaction with water (exothermic)
         "water": {
             elem1: "steam",
             elem2: "steam",
@@ -30,7 +23,6 @@ elements.sulfuric_acid = {
     }
 };
 
-// Optional: Acid Gas when heated
 elements.acid_gas = {
     color: "#a0e0ff",
     behavior: behaviors.GAS,
@@ -40,5 +32,5 @@ elements.acid_gas = {
     density: 1.8,
     tempLow: 337,
     stateLow: "sulfuric_acid",
-    desc: "Vaporized acid. May cause burns or reactions in air."
+    desc: "Vaporized acid. Can be dangerous if inhaled."
 };
